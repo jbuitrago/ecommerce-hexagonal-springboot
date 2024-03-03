@@ -1,0 +1,5 @@
+com\ecommerce\domain\HelloWorldService.class
+com\ecommerce\adapter\HelloWorldController.class
+com\ecommerce\adapter\web\CustomErrorController.class
+com\ecommerce\application\HelloWorldApplicationService.class
+com\ecommerce\application\HelloWorldApplication.class
