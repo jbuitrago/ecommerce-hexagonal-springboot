@@ -108,4 +108,5 @@ public class Price {
     public Price toDomainModel() {
         return new Price(id,brandId,startDate,endDate,priceList,productId,priority,price,currency);
     }
+
 }

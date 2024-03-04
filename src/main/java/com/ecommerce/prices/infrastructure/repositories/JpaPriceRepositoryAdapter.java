@@ -20,8 +20,8 @@ public class JpaPriceRepositoryAdapter implements PriceRepositoryPort {
     @Override
     public Price save(Price price) {
         PriceEntity priceEntity = PriceEntity.fromDomainModel(price);
-        PriceEntity savedTaskEntity = jpaPriceRepository.save(priceEntity);
-        return savedTaskEntity.toDomainModel();
+        PriceEntity savedPriceEntity = jpaPriceRepository.save(priceEntity);
+        return savedPriceEntity.toDomainModel();
 
     }
 
