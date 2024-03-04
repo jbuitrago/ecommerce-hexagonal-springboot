@@ -2,22 +2,24 @@ package com.ecommerce.prices.application.usecases;
 
 import com.ecommerce.prices.domain.models.Price;
 import com.ecommerce.prices.domain.ports.in.GetPriceUseCase;
+import com.ecommerce.prices.domain.ports.out.PriceRepositoryPort;
 
 import java.util.Optional;
 
 public class GetPriceUseCaseImpl implements GetPriceUseCase {
 
-    private final GetPriceUseCase getPriceUseCase;
+    private final PriceRepositoryPort priceRepositoryPort;
+
+    public GetPriceUseCaseImpl(PriceRepositoryPort priceRepositoryPort) {
+        this.priceRepositoryPort = priceRepositoryPort;
 
 
-    public GetPriceUseCaseImpl(GetPriceUseCase getPriceUseCase) {
-        this.getPriceUseCase = getPriceUseCase;
     }
 
-
-    @Override
-    public Optional<Price> getPrice(Long id) {
-        return Optional.empty();
+    public Optional<Price> getPriceById(Long id) {
+        return priceRepositoryPort.findById(id);
     }
+
 }
+
 

@@ -6,6 +6,6 @@ import java.util.Optional;
 
 public interface GetPriceUseCase {
 
-    Optional<Price> getPrice(Long id);
+    Optional<Price> getPriceById(Long id);
 
 }

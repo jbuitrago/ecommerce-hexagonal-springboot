@@ -14,7 +14,7 @@ public class PriceService implements GetPriceUseCase {
     }
 
     @Override
-    public Optional<Price> getPrice(Long id) {
-        return this.getPriceUseCase.getPrice(id);
+    public Optional<Price> getPriceById(Long id) {
+        return this.getPriceUseCase.getPriceById(id);
     }
 }

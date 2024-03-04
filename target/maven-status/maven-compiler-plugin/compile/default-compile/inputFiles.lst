@@ -1,9 +1,12 @@
+C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\infrastructure\entities\PriceEntity.java
+C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\infrastructure\repositories\JpaPriceRepositoryAdapter.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\application\services\PriceService.java
-C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\domain\models\Product.java
-C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\domain\models\Brand.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\infrastructure\adapters\error\CustomErrorController.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\domain\models\Price.java
+C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\infrastructure\config\ApplicationConfig.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\domain\ports\in\GetPriceUseCase.java
+C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\infrastructure\repositories\JpaPriceRepository.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\application\usecases\GetPriceUseCaseImpl.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\domain\ports\out\PriceRepositoryPort.java
+C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\infrastructure\controllers\PriceController.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\PricesApplication.java
