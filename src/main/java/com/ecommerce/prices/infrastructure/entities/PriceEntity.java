@@ -2,14 +2,13 @@ package com.ecommerce.prices.infrastructure.entities;
 
 import com.ecommerce.prices.domain.models.Price;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
+@Table(name = "prices")
 public class PriceEntity {
 
     @Id

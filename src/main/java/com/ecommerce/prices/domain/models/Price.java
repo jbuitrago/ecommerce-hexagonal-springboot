@@ -1,7 +1,5 @@
 package com.ecommerce.prices.domain.models;
 
-import com.ecommerce.prices.infrastructure.entities.PriceEntity;
-
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -99,14 +97,6 @@ public class Price {
 
     public void setCurrency(String currency) {
         this.currency = currency;
-    }
-
-    public static PriceEntity fromDomainModel(Price price) {
-        return new PriceEntity(price.getId(), price.getBrandId(), price.getStartDate(),price.getEndDate(),price.getPriceList(),price.getProductId(),price.getPriority(),price.getPrice(),price.getCurrency());
-    }
-
-    public Price toDomainModel() {
-        return new Price(id,brandId,startDate,endDate,priceList,productId,priority,price,currency);
     }
 
 }

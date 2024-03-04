@@ -25,6 +25,10 @@ public class PriceController {
                 .map(price -> new ResponseEntity<>(price, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+    @GetMapping("/ok")
+    public String testOk() {
+        return "OK";
+    }
 
 
 }

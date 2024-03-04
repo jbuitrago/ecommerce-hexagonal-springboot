@@ -12,9 +12,8 @@ public class JpaPriceRepositoryAdapter implements PriceRepositoryPort {
 
     private final JpaPriceRepository jpaPriceRepository;
 
-    public JpaPriceRepositoryAdapter(JpaPriceRepository jpaPriceRepository){
+    public JpaPriceRepositoryAdapter(JpaPriceRepository jpaPriceRepository) {
         this.jpaPriceRepository = jpaPriceRepository;
-
     }
 
     @Override
