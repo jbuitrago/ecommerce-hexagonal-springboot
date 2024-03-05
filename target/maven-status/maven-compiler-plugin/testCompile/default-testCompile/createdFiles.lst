@@ -1,0 +1,3 @@
+com\ecommerce\prices\infrastructure\controllers\PriceControllerIntegrationTest.class
+com\ecommerce\prices\application\services\PriceServiceTest.class
+com\ecommerce\prices\application\usescases\GetPriceUseCaseImplTest.class

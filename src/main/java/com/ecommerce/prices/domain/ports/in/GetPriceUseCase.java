@@ -1,6 +1,7 @@
 package com.ecommerce.prices.domain.ports.in;
 
 import com.ecommerce.prices.domain.models.Price;
+import com.ecommerce.prices.infrastructure.dtos.PriceOutputDTO;
 
 import java.util.Date;
 import java.util.List;
@@ -19,7 +20,7 @@ public interface GetPriceUseCase {
      * @param endDate    Fecha de fin del rango.
      * @return Lista de precios que cumplen con los criterios de búsqueda.
      */
-    List<Price> getPricesByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(Long brandId, Long productId, Date startDate, Date endDate);
+    List<PriceOutputDTO> getPricesByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(Long brandId, Long productId, Date startDate, Date endDate);
 
     /**
      * Obtiene una lista de precios por ID de marca y ID de producto.

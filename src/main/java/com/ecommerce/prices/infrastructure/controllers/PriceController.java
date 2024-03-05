@@ -2,6 +2,8 @@ package com.ecommerce.prices.infrastructure.controllers;
 
 import com.ecommerce.prices.application.services.PriceService;
 import com.ecommerce.prices.domain.models.Price;
+import com.ecommerce.prices.infrastructure.dtos.PriceOutputDTO;
+import com.ecommerce.prices.util.DateUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +12,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Controlador para manejar las operaciones relacionadas con los precios.
@@ -39,25 +42,24 @@ public class PriceController {
      * @return ResponseEntity con la lista de precios encontrados y código de estado HTTP correspondiente.
      */
     @GetMapping("/pricesByBrandIdAndProductIdAndDate")
-    public ResponseEntity<List<Price>> getPricesByBrandIdAndProductIdAndDate(
+    public ResponseEntity<List<PriceOutputDTO>> getPricesByBrandIdAndProductIdAndDate(
             @RequestParam("brandId") Long brandId,
             @RequestParam("productId") Long productId,
             @RequestParam("startDate") String startDateStr,
             @RequestParam("endDate") String endDateStr) {
-        // Conversión de las cadenas de fecha a objetos Date
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date startDate = null;
-        Date endDate = null;
-        try {
-            startDate = dateFormat.parse(startDateStr);
-            endDate = dateFormat.parse(endDateStr);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+         try {
+            Date startDate = DateUtils.parseDate(startDateStr);
+            Date endDate = DateUtils.parseDate(endDateStr);
+             // Conversión de las cadenas de fecha a objetos Date
+            if (!DateUtils.isValidDateRange(startDate, endDate)) {
+                return ResponseEntity.badRequest().build();
+            }
 
-        // Obtener precios utilizando el servicio
-        List<Price> prices = priceService.getPricesByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(brandId, productId, startDate, endDate);
-        return new ResponseEntity<>(prices, HttpStatus.OK);
+            List<PriceOutputDTO> pricesOutput = priceService.getPricesByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(brandId, productId, startDate, endDate);
+            return ResponseEntity.ok(pricesOutput);
+        } catch (ParseException e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     /**

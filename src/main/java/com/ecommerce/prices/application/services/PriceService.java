@@ -2,6 +2,8 @@ package com.ecommerce.prices.application.services;
 
 import com.ecommerce.prices.domain.models.Price;
 import com.ecommerce.prices.domain.ports.in.GetPriceUseCase;
+import com.ecommerce.prices.infrastructure.dtos.PriceOutputDTO;
+
 import java.util.Optional;
 import java.util.List;
 import java.util.Date;
@@ -32,7 +34,7 @@ public class PriceService implements GetPriceUseCase {
      * @return Lista de precios que cumplen con los criterios de búsqueda.
      */
     @Override
-    public List<Price> getPricesByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(Long brandId, Long productId, Date startDate, Date endDate) {
+    public List<PriceOutputDTO> getPricesByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(Long brandId, Long productId, Date startDate, Date endDate) {
         return getPriceUseCase.getPricesByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(brandId, productId, startDate, endDate);
     }
 

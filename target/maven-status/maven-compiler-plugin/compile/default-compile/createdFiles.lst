@@ -1,8 +1,11 @@
 com\ecommerce\prices\domain\models\Price.class
+com\ecommerce\prices\infrastructure\dtos\PriceOutputDTO.class
 com\ecommerce\prices\infrastructure\entities\PriceEntity.class
 com\ecommerce\prices\application\usecases\GetPriceUseCaseImpl.class
+com\ecommerce\prices\error\GlobalExceptionHandler.class
 com\ecommerce\prices\application\services\PriceService.class
 com\ecommerce\prices\domain\ports\out\PriceRepositoryPort.class
+com\ecommerce\prices\util\DateUtils.class
 com\ecommerce\prices\infrastructure\config\ApplicationConfig.class
 com\ecommerce\prices\PricesApplication.class
 com\ecommerce\prices\infrastructure\adapters\error\CustomErrorController.class
