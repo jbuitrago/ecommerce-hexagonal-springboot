@@ -5,6 +5,8 @@ import com.ecommerce.prices.domain.ports.out.PriceRepositoryPort;
 import com.ecommerce.prices.infrastructure.entities.PriceEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -29,6 +31,26 @@ public class JpaPriceRepositoryAdapter implements PriceRepositoryPort {
         return jpaPriceRepository.findById(id).map(PriceEntity::toDomainModel);
     }
 
+    @Override
+    public List<PriceEntity> findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc (Long brandId,Long productId,Date startDate, Date endDate) {
+
+        System.out.println("findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc");
+        System.out.println(productId);
+        System.out.println(brandId);
+        System.out.println(startDate);
+        System.out.println(endDate);
+        return jpaPriceRepository.findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc (brandId,productId,startDate,endDate);
+    }
+
+    @Override
+    public List<PriceEntity> findByBrandIdAndProductId(Long brandId,Long productId) {
+        System.out.println("JpaPriceRepositoryAdapter");
+        System.out.println(productId);
+        System.out.println(brandId);
+        return jpaPriceRepository.findByBrandIdAndProductId(brandId,productId);
+    }
 
 
 }
+
+
