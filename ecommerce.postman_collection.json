@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "dd73b32e-a717-45a3-9cc4-26caf5ebeec8",
+		"name": "ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5855376",
+		"_collection_link": "https://sirena.postman.co/workspace/4b4cec0f-bbf3-4a1d-a490-ba00e44a80a8/collection/5855376-dd73b32e-a717-45a3-9cc4-26caf5ebeec8?action=share&source=collection_link&creator=5855376"
+	},
+	"item": [
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/prices/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prices",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pricesByBrandIdAndProductIdAndDate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/prices/pricesByBrandIdAndProductIdAndDate?brandId=1&productId=35455&startDate=2020-06-14 00:00:00&endDate=2020-10-31 23:59:59",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prices",
+						"pricesByBrandIdAndProductIdAndDate"
+					],
+					"query": [
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "startDate",
+							"value": "2020-06-14 00:00:00"
+						},
+						{
+							"key": "endDate",
+							"value": "2020-10-31 23:59:59"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pricesByBrandIdAndProductId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/prices/pricesByBrandIdAndProductId?brandId=1&productId=35455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prices",
+						"pricesByBrandIdAndProductId"
+					],
+					"query": [
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,2 +1,3 @@
-C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\test\java\com\ecommerce\adapter\HelloWorldControllerTest.java
-C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\test\java\com\ecommerce\domain\HelloWorldServiceTest.java
+C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\test\java\com\ecommerce\prices\infrastructure\controllers\PriceControllerIntegrationTest.java
+C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\test\java\com\ecommerce\prices\application\services\PriceServiceTest.java
+C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\test\java\com\ecommerce\prices\application\usescases\GetPriceUseCaseImplTest.java
