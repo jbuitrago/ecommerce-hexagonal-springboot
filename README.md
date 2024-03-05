@@ -79,6 +79,7 @@ Se realizaron pruebas exhaustivas para garantizar el correcto funcionamiento de 
 - `GetPriceUseCaseImplTest.java`: Aquí se encuentran pruebas unitarias para el caso de uso de obtener precios, garantizando su correcto funcionamiento.
 - `PriceControllerIntegrationTest.java`: Este archivo contiene pruebas de integración para el controlador de precios, verificando la correcta interacción entre los controladores y los servicios.
 
+Los test solicitados se encuentran en https://github.com/jbuitrago/ecommerce-hexagonal-springboot/blob/main/src/test/java/com/ecommerce/prices/infrastructure/controllers/PriceControllerIntegrationTest.java
 
 ### Postman
 
