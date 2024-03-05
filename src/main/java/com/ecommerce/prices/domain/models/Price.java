@@ -3,6 +3,9 @@ package com.ecommerce.prices.domain.models;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * Clase que representa un precio en el dominio del modelo.
+ */
 public class Price {
     private Long id;
     private Long brandId;
@@ -13,6 +16,20 @@ public class Price {
     private int priority;
     private BigDecimal price;
     private String currency;
+
+    /**
+     * Constructor de la clase Price.
+     *
+     * @param id          ID del precio.
+     * @param brandId     ID de la marca asociada al precio.
+     * @param startDate   Fecha de inicio de validez del precio.
+     * @param endDate     Fecha de fin de validez del precio.
+     * @param priceList   Lista de precios.
+     * @param productId   ID del producto asociado al precio.
+     * @param priority    Prioridad del precio.
+     * @param price       Valor del precio.
+     * @param currency    Moneda del precio.
+     */
     public Price(Long id, Long brandId, Date startDate, Date endDate, String priceList, Long productId, int priority, BigDecimal price, String currency) {
         this.id = id;
         this.brandId = brandId;
@@ -98,5 +115,4 @@ public class Price {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
-
 }

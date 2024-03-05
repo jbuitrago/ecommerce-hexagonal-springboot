@@ -7,13 +7,20 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
+/**
+ * Adaptador para el puerto del repositorio de precios que utiliza JPA.
+ */
 @Component
 public class JpaPriceRepositoryAdapter implements PriceRepositoryPort {
 
     private final JpaPriceRepository jpaPriceRepository;
 
+    /**
+     * Constructor que recibe una instancia de JpaPriceRepository.
+     *
+     * @param jpaPriceRepository Repositorio JPA de precios.
+     */
     public JpaPriceRepositoryAdapter(JpaPriceRepository jpaPriceRepository) {
         this.jpaPriceRepository = jpaPriceRepository;
     }
@@ -23,34 +30,15 @@ public class JpaPriceRepositoryAdapter implements PriceRepositoryPort {
         PriceEntity priceEntity = PriceEntity.fromDomainModel(price);
         PriceEntity savedPriceEntity = jpaPriceRepository.save(priceEntity);
         return savedPriceEntity.toDomainModel();
-
     }
 
     @Override
-    public Optional<Price> findById(Long id) {
-        return jpaPriceRepository.findById(id).map(PriceEntity::toDomainModel);
+    public List<Price> findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(Long brandId, Long productId, Date startDate, Date endDate) {
+        return jpaPriceRepository.findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(brandId, productId, startDate, endDate);
     }
 
     @Override
-    public List<PriceEntity> findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc (Long brandId,Long productId,Date startDate, Date endDate) {
-
-        System.out.println("findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc");
-        System.out.println(productId);
-        System.out.println(brandId);
-        System.out.println(startDate);
-        System.out.println(endDate);
-        return jpaPriceRepository.findByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc (brandId,productId,startDate,endDate);
+    public List<Price> findByBrandIdAndProductId(Long brandId, Long productId) {
+        return jpaPriceRepository.findByBrandIdAndProductId(brandId, productId);
     }
-
-    @Override
-    public List<PriceEntity> findByBrandIdAndProductId(Long brandId,Long productId) {
-        System.out.println("JpaPriceRepositoryAdapter");
-        System.out.println(productId);
-        System.out.println(brandId);
-        return jpaPriceRepository.findByBrandIdAndProductId(brandId,productId);
-    }
-
-
 }
-
-
