@@ -10,6 +10,7 @@ com\ecommerce\prices\infrastructure\config\ApplicationConfig.class
 com\ecommerce\prices\PricesApplication.class
 com\ecommerce\prices\infrastructure\adapters\error\CustomErrorController.class
 com\ecommerce\prices\infrastructure\repositories\JpaPriceRepositoryAdapter.class
+com\ecommerce\prices\error\ErrorResponse.class
 com\ecommerce\prices\infrastructure\controllers\PriceController.class
 com\ecommerce\prices\infrastructure\repositories\JpaPriceRepository.class
 com\ecommerce\prices\domain\ports\in\GetPriceUseCase.class

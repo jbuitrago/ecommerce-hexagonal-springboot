@@ -11,5 +11,6 @@ C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springbo
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\infrastructure\adapters\error\CustomErrorController.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\domain\models\Price.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\infrastructure\repositories\JpaPriceRepository.java
+C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\error\ErrorResponse.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\domain\ports\out\PriceRepositoryPort.java
 C:\Users\jorge\Documents\Proyectos\Personal\inditex\ecommerce-hexagonal-springboot\src\main\java\com\ecommerce\prices\infrastructure\controllers\PriceController.java

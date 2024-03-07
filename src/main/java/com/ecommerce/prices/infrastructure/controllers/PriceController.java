@@ -2,6 +2,7 @@ package com.ecommerce.prices.infrastructure.controllers;
 
 import com.ecommerce.prices.application.services.PriceService;
 import com.ecommerce.prices.domain.models.Price;
+import com.ecommerce.prices.error.ErrorResponse;
 import com.ecommerce.prices.infrastructure.dtos.PriceOutputDTO;
 import com.ecommerce.prices.util.DateUtils;
 import org.springframework.http.HttpStatus;
@@ -42,17 +43,23 @@ public class PriceController {
      * @return ResponseEntity con la lista de precios encontrados y código de estado HTTP correspondiente.
      */
     @GetMapping("/pricesByBrandIdAndProductIdAndDate")
-    public ResponseEntity<List<PriceOutputDTO>> getPricesByBrandIdAndProductIdAndDate(
+    public ResponseEntity<?> getPricesByBrandIdAndProductIdAndDate(
             @RequestParam("brandId") Long brandId,
             @RequestParam("productId") Long productId,
             @RequestParam("startDate") String startDateStr,
             @RequestParam("endDate") String endDateStr) {
          try {
+
+             if (startDateStr == null || endDateStr == null ||
+                     !DateUtils.isValidDateFormat(startDateStr) ||
+                     !DateUtils.isValidDateFormat(endDateStr)) {
+                 return ResponseEntity.badRequest().body(new ErrorResponse("Error: Las fechas tienen un formato inválido."));
+             }
             Date startDate = DateUtils.parseDate(startDateStr);
             Date endDate = DateUtils.parseDate(endDateStr);
              // Conversión de las cadenas de fecha a objetos Date
             if (!DateUtils.isValidDateRange(startDate, endDate)) {
-                return ResponseEntity.badRequest().build();
+                return ResponseEntity.badRequest().body(new ErrorResponse("Error: El rango de fechas es inválido."));
             }
 
             List<PriceOutputDTO> pricesOutput = priceService.getPricesByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(brandId, productId, startDate, endDate);
